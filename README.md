@@ -13,3 +13,20 @@ Information about this app!
 
 SDK 29
 Min SDK 11
+
+Customization guide:
+
+the index.html file is our json file what we take as input, then parse this result and send this result to ListView
+
+If you need your self test, download this index.html file and edit as your own need.
+
+then upload in your hosting place, and change your url in following:
+
+Go to Java > com > nurujjamanpollob > jsonparser > MainActivity.java
+
+
+Then find this field: private static String url = "http://deeplearningsolution.com/api/"; and change your url!
+
+this will load data from your location!
+
+Thanks for reading it out.
