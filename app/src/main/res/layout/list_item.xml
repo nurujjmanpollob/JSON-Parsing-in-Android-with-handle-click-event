@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
 
-    <!-- Name Label -->
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:paddingTop="6dip"
-        android:text="Name"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+	<TextView
+		android:id="@+id/name"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="2dip"
+		android:paddingTop="6dip"
+		android:text="Name"
+		android:textSize="16sp"
+		android:textStyle="bold"
+		android:textColor="#27EF00"/>
 
-    <!-- Email label -->
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="2dip"
-        android:text="Email" />
+	<TextView
+		android:id="@+id/email"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:paddingBottom="2dip"
+		android:text="Email"
+		android:textColor="#FF0F00"/>
 
-    <!-- Mobile number label -->
-    <TextView
-        android:id="@+id/mobile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="Mobile: " />
+	<TextView
+		android:id="@+id/mobile"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="left"
+		android:text="Mobile: "
+		android:textColor="#6C00D7"/>
 
 </LinearLayout>
+

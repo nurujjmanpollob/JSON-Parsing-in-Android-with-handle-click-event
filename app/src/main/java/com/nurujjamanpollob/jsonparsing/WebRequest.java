@@ -2,6 +2,8 @@ package com.nurujjamanpollob.jsonparsing;
 
 import android.os.Build;
 
+//import androidx.annotation.RequiresApi;
+
 import androidx.annotation.RequiresApi;
 
 import java.io.BufferedReader;
@@ -15,8 +17,10 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.net.ssl.HttpsURLConnection;
+
 
 public class WebRequest {
 
@@ -29,23 +33,25 @@ public class WebRequest {
 
     }
 
-    /**
+    /*
      * Making web service call
      *
      * @url - url to make request
      * @requestmethod - http request method
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public String makeWebServiceCall(String url, int requestmethod) {
         return this.makeWebServiceCall(url, requestmethod, null);
     }
 
-    /**
+    /*
      * Making service call
      *
      * @url - url to make request
      * @requestmethod - http request method
      * @params - http request params
      */
+  //  @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public String makeWebServiceCall(String urladdress, int requestmethod,
                                      HashMap<String, String> params) {
@@ -92,6 +98,7 @@ public class WebRequest {
 
             int responseCode = conn.getResponseCode();
 
+			
             if (responseCode == HttpsURLConnection.HTTP_OK) {
                 String line;
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -102,7 +109,10 @@ public class WebRequest {
                 response = new StringBuilder();
             }
         } catch (Exception e) {
-            e.printStackTrace();
+         //   e.printStackTrace();
+		 
+		 response.append(Objects.requireNonNull(e.getCause()).toString());
+		 
         }
 
         return response.toString();
