@@ -33,13 +33,17 @@ this will load data from your given URL!
 #Added New Classes
 
 LoadData.Java(Which loads Bitmap(Image from internet), and can show progress, can resize input image! (Show Code Comment for Details)
+
 Strings.Java(Help Store all strings in one place. Good for big project and reference)
+
 StudentDetails.Java(This class will show student data according to received data from Json Object, See class for more Details).
 
 #Upcoming feature
 
-<ul> <li> recycleView and Cardview to Create a ImageGallary or News App </li> </ul>
+<ul> <li> RecycleView and Cardview to Create a ImageGallary or News App </li> </ul>
+
 FireBase integration
+
 Login / SignUP Option
 
 
