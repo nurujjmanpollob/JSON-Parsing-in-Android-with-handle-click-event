@@ -8,7 +8,7 @@ Then look at this repo, and learn this technology!
 
 Feel free to submit bugs, suggestion, help and contribution is always welcome.
 
-My website: https://www.deeplearningsolution.com
+My website: http://www.deeplearningsolution.com
 
 Information about this app!
 
