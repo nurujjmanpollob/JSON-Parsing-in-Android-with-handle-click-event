@@ -1,8 +1,10 @@
 package com.nurujjamanpollob.jsonparsing;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -94,7 +96,10 @@ public class GetStudents extends AsyncTask<Void, Void, Void> {
         String jsonStr = webreq.makeWebServiceCall(url, WebRequest.GET);
 
 
-        Log.d("Response: ", "> " + jsonStr);
+        System.out.println("Received response: "+jsonStr);
+
+
+     //   Log.d("Response: ", "> " + jsonStr);
 
         studentList = ParseJSON(jsonStr);
 
@@ -118,6 +123,7 @@ public class GetStudents extends AsyncTask<Void, Void, Void> {
 
         //Updating parsed JSON data into ListView
 
+        if(studentList != null) {
 
 
             ListAdapter adapter = new SimpleAdapter(
@@ -130,7 +136,7 @@ public class GetStudents extends AsyncTask<Void, Void, Void> {
 
             //Handling list item click event
 
-			listView.setOnItemClickListener((p1, p2, positions, p4) -> {
+            listView.setOnItemClickListener((p1, p2, positions, p4) -> {
 
 
                 //Check for positions what listview item is selected then copy its key and value
@@ -158,9 +164,24 @@ public class GetStudents extends AsyncTask<Void, Void, Void> {
                 context.startActivity(intent);
 
 
-
-
             });
+
+
+        }else {
+
+            AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+
+            dialog.setTitle("error!");
+            dialog.setMessage("Remote Server Database not received, or received wrong response.");
+            dialog.setPositiveButton("Close", (dialogInterface, i) -> dialogInterface.cancel());
+
+            dialog.setCancelable(false);
+
+            AlertDialog d = dialog.create();
+            d.show();
+
+
+        }
 
     }
 

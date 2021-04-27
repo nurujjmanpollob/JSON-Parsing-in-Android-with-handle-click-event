@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Calling async task to get json
         // URL to get contacts JSON
-        String url = "http://deeplearningsolution.com/api/";
+        String url = "https://nurujjamanpollob.github.io/NJPS-Multimedia-Android-/appdatabase.json";
         new GetStudents(this, url,listView).execute();
 
 		
